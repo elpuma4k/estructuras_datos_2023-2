@@ -29,12 +29,19 @@ void imprimirLista(Lista l){
   }
 }
 
+/*
+ * Complejidad de la Implementación:
+ * O(n) en el que n es el tamaño de la lista, debido a que recorremos la lista completa para 
+ * determinar cuantos valores de la estructura cumplen con la condición.
+*/
+
 int obtenerIgualModulo(Lista l, int v, int k){
-  int ans = 0, size, i, element;
+  int ans = 0, size, i, element, modul;
   size = l.longLista();
+  modul = v % k;
   for(i = 1; i <= size; i++){
-    element = l.longLista();
-    if(element % k == 0) ans++;
+    element = l.infoLista(i);
+    if(element % k == modul) ans++;
   }
   return ans;
 }
