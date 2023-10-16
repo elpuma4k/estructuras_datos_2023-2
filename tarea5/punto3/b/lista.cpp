@@ -4,6 +4,25 @@ Lista::Lista(){
   act = NULL;
 }
 
+
+void Lista::insertarEnListaOrdenada(Elemento elem) {
+  Nodo* nuevo = new Nodo;
+  nuevo->dato = elem;
+  nuevo->sig = NULL;
+
+  if (act == NULL || elem <= act->dato) {
+    nuevo->sig = act;
+    act = nuevo;
+  } else {
+    Nodo* tmp = act;
+    while (tmp->sig != NULL && tmp->sig->dato < elem) {
+      tmp = tmp->sig;
+    }
+    nuevo->sig = tmp->sig;
+    tmp->sig = nuevo;
+  }
+}
+
 void Lista::anxLista(Elemento elem){
   Nodo* tmp;
   Nodo* nuevo = new Nodo;
@@ -21,7 +40,7 @@ void Lista::anxLista(Elemento elem){
 }
 
 void Lista::insLista(Elemento elem, int pos){
-  Nodo *nuevo, *tmp;
+Nodo  Nodo *nuevo, *tmp;
   nuevo = new Nodo;
   nuevo->dato = elem;
   nuevo->sig = NULL;

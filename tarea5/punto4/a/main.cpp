@@ -29,29 +29,40 @@ void imprimirLista(Lista l){
   }
 }
 
-int obtenerIgualModulo(Lista l, int v, int k){
-  int ans = 0, size, i, element, modul;
-  size = l.longLista();
-  modul = v % k;
-  for(i = 1; i <= size; i++){
-    element = l.infoLista(i);
-    if(element % k == modul) ans++;
+void restarListas(Lista &l1, Lista &l2){
+  int size1, size2,  i = 1, element1, element2, j = 1;
+  size1 = l1.longLista();
+  size2 = l2.longLista();
+  i = 1;
+  while(i <= size2){
+    element1 = l2.infoLista(i);
+    j = 1;
+    while(j <= size1){
+      element2 = l1.infoLista(j);
+      if(element1 == element2){
+        l1.elimLista(j);
+        size1--;
+      }
+      j++;
+    }
+    i++;
   }
-  return ans;
 }
 
 int main(){
-  Lista lis;
+  Lista lis1;
+  Lista lis2;
   int ans;
-  lis.anxLista(11);
-  lis.anxLista(23);
-  lis.anxLista(17);
-  lis.anxLista(94);
-  lis.anxLista(45);
-  lis.anxLista(33);
-  lis.anxLista(38);
-  lis.anxLista(16);
-  imprimirLista(lis);
-  ans = obtenerIgualModulo(lis, 24, 7);
-  cout << "El Resultado es: " << ans << endl;
+  lis1.anxLista(1);
+  lis1.anxLista(2);
+  lis1.anxLista(3);
+  lis1.anxLista(4);
+  lis1.anxLista(5);
+  imprimirLista(lis1);
+  lis2.anxLista(2);
+  lis2.anxLista(4);
+  imprimirLista(lis2);
+  cout << "El Resultado es: " << endl;
+  restarListas(lis1, lis2);
+  imprimirLista(lis1);
 }

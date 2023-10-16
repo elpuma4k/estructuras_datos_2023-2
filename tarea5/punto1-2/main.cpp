@@ -17,7 +17,7 @@ using namespace std;
  * imprimir cada uno de los valores que contiene la estructura.
 */
 
-void imprimirLista(Lista l){
+void imprimirLista(Lista &l){
   int size, i = 1, element;
   size = l.longLista();
   for(i = 1; i <= size; i++){
@@ -35,7 +35,7 @@ void imprimirLista(Lista l){
  * determinar cuantos valores de la estructura cumplen con la condición.
 */
 
-int obtenerIgualModulo(Lista l, int v, int k){
+int obtenerIgualModulo(Lista &l, int v, int k){
   int ans = 0, size, i, element, modul;
   size = l.longLista();
   modul = v % k;
