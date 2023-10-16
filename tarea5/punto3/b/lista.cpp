@@ -4,7 +4,11 @@ Lista::Lista(){
   act = NULL;
 }
 
-
+/*Complejidad de implementacion:
+ * En el peor de los casos la complejidad de la implementacion seria O(n), en el que n es la logintud
+ * de la lista, debido a que el elemento ordenado podria quedar al final por lo que tendria que recorrer
+ * la lista completa para poder ser anexado en su posicion correspondiente.
+ */
 void Lista::insertarEnListaOrdenada(Elemento elem) {
   Nodo* nuevo = new Nodo;
   nuevo->dato = elem;

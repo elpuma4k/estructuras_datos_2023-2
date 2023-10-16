@@ -11,12 +11,6 @@
 
 using namespace std;
 
-/*
- * Complejidad de la Implementación:
- * O(n) en el que n es el tamaño de la lista, debido a que recorremos la lista completa para 
- * imprimir cada uno de los valores que contiene la estructura.
-*/
-
 void imprimirLista(Lista l){
   int size, i = 1, element;
   size = l.longLista();
@@ -29,29 +23,24 @@ void imprimirLista(Lista l){
   }
 }
 
-int obtenerIgualModulo(Lista l, int v, int k){
-  int ans = 0, size, i, element, modul;
-  size = l.longLista();
-  modul = v % k;
-  for(i = 1; i <= size; i++){
-    element = l.infoLista(i);
-    if(element % k == modul) ans++;
-  }
-  return ans;
-}
-
 int main(){
   Lista lis;
+  Lista lis2;
+  Lista lis3;
   int ans;
-  lis.anxLista(11);
-  lis.anxLista(23);
-  lis.anxLista(17);
-  lis.anxLista(94);
-  lis.anxLista(45);
-  lis.anxLista(33);
-  lis.anxLista(38);
-  lis.anxLista(16);
+  lis.anxLista(2);
+  lis.anxLista(4);
+  lis.anxLista(6);
+  lis.anxLista(8);
+  lis2.anxLista(1);
+  lis2.anxLista(2);
+  lis2.anxLista(3);
+  lis2.anxLista(4);
+  cout << "La lista 1 es: " << endl;
   imprimirLista(lis);
-  ans = obtenerIgualModulo(lis, 24, 7);
-  cout << "El Resultado es: " << ans << endl;
+  cout << "La lista 2 es: " << endl;
+  imprimirLista(lis2);
+  cout << "El Resultado es: " << endl;
+  lis3 = lis - lis2;
+  imprimirLista(lis3);
 }

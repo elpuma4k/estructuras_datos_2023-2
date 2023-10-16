@@ -39,6 +39,7 @@ class Lista{
     Lista();
 
     /* Modificadoras */
+    Lista operator-(Lista &lis2);
     void anxLista(Elemento elem);
     void insLista(Elemento elem, int pos);
     void elimLista(int pos);

@@ -4,6 +4,51 @@ Lista::Lista(){
   act = NULL;
 }
 
+/*Complejidad de La Implementación:
+ * infoLista(): Posee una complejidad O(n) donde n es la posicion a buscar de la lista.
+ * anxLista(): Posee una complejidad O(n) Donde n es la longitud de la lista.
+ * Complejidad de la implementacion Total T(n) = n*m*(m-i) debido a que la funcion de infolista varia dependiendo
+ * la posicion del nodo que se desea identificar. Utilice la funcion "anxLista()" debido a que considero que es la forma
+ * mas eficiente y no es necesario crearla de nuevo.
+*/
+
+int Lista::longLista(){
+  Nodo* tmp = act;
+  int cont = 0;
+
+  while(tmp != NULL){
+    tmp = tmp->sig;
+    cont++;
+  }
+
+  return cont;
+}
+
+Lista Lista::operator-(Lista &l2){
+  Lista ans;
+  Nodo* tmp = act;
+  int elemento, j, size2, count;
+  size2 = l2.longLista();
+  bool flag = false;
+  while(tmp != NULL){
+    elemento = tmp->dato;
+    j = 1;
+    count = 0;
+    while(j <= size2 && !flag){
+      if(elemento == l2.infoLista(j)){
+        flag = true;
+      }
+      else{
+        count++;
+      }
+      j++;
+    }
+    if(count == size2) ans.anxLista(tmp->dato);
+    tmp = tmp->sig;
+  }
+  return ans;
+}
+
 void Lista::anxLista(Elemento elem){
   Nodo* tmp;
   Nodo* nuevo = new Nodo;
@@ -64,18 +109,6 @@ Elemento Lista::infoLista(int pos){
     tmp = tmp->sig;
 
   return tmp->dato;
-}
-
-int Lista::longLista(){
-  Nodo* tmp = act;
-  int cont = 0;
-
-  while(tmp != NULL){
-    tmp = tmp->sig;
-    cont++;
-  }
-
-  return cont;
 }
 
 bool Lista::vaciaLista(){

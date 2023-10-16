@@ -40,6 +40,7 @@ class Lista{
 
     /* Modificadoras */
     void anxLista(Elemento elem);
+    void insertarEnListaOrdenada(Elemento elem);
     void insLista(Elemento elem, int pos);
     void elimLista(int pos);
 
