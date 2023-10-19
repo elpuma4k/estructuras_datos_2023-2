@@ -3,27 +3,18 @@
  * Curso: Estructuras De Datos - Proyecto Final
  * Profesor: Carlos Ramirez Restrepo
  * Tema: Matrices Dispersas 
- * Estudiante: David Nino
+ * Estudiantes: David Nino - Juan David tabares
  * Parabellum
 */
 
 #include<iostream>
 #include "DisperseMatrix.cpp"
+#include "DisperseMatrix.h"
 
 using namespace std;
 
 int main(){
-  Lista lis;
-  int ans;
-  lis.anxLista(11);
-  lis.anxLista(23);
-  lis.anxLista(17);
-  lis.anxLista(94);
-  lis.anxLista(45);
-  lis.anxLista(33);
-  lis.anxLista(38);
-  lis.anxLista(16);
-  imprimirLista(lis);
-  ans = obtenerIgualModulo(lis, 24, 7);
-  cout << "El Resultado es: " << ans << endl;
+  vector<vector<int>> matrixVector = {{1,2,3},{4,5,6},{7,8,9}};
+  DisperseMatrix matrizdispersa(matrixVector);
+  matrizdispersa.imprimirNotacion();
 }
