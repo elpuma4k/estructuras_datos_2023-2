@@ -24,6 +24,7 @@ class DisperseMatrix{
     vector<int> values;
     vector<int> rows;
     vector<int> columns;
+    int countRows = 0, countColumns = 0;
 
   public:
     /************************
@@ -36,23 +37,24 @@ class DisperseMatrix{
 
     /* Modificadoras */
     void rebuild();
-    void imprimirNotacion();
+    void printNotation();
+    void printMatrix();
     /* Retorna el valor deseado */
-    int get(int i, int j);
+    int get(int &i, int &j);
     /* Obtiene el vector de los Datos importantes */
-    vector<int> getRow(int j);
+    vector<int> getRow(int &j);
     /*
-    vector<int> getCol(int i);
+    vector<int> getCol(int &i);
     // == Se Retorna un vector Incluyendo los Ceros ==
-    vector<int> getDisperseRow(int j);
-    vector<int> getDisperseCol(int i);
+    vector<int> getDisperseRow(int &j);
+    vector<int> getDisperseCol(int &i);
     // -- Aqui ya inicia lo complicado --
-    void assign(int i, int j);
+    void assign(int &i, int &j);
     // Operacion De Matrices 
-    void add(DisperseMatrix m);
+    void add(DisperseMatrix &m);
     void productVector(const vector &vec);
     // Imprimir La matrix Separados por el carac elegido
-    void printMatrix(char caracter);
+    void printMatrix(char &caracter);
     // Obtiene el numero maximo de una matriz
     int getMax();
     DisperseMatrix getTranspose();
