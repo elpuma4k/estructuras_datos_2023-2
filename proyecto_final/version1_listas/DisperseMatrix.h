@@ -1,6 +1,5 @@
 /*
-Autores: David Niño - Juan David Tabares
-...
+Autores: David Niño - Juan David Tabares.
 */
 #ifndef __DISPERSEMATRIX_H
 #define __DISPERSEMATRIX_H
