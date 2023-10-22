@@ -1,6 +1,6 @@
 /*
 Autores: David Niño - Juan David Tabares
-...
+Clase asociada al TAD DisperseMatrix con listas de STL
 */
 #ifndef __DISPERSEMATRIX_H
 #define __DISPERSEMATRIX_H
